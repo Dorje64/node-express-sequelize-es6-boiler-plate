@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   "development": {
     "username": "root",
     "password": null,
@@ -21,15 +21,3 @@ const config = {
     "dialect": "mysql"
   }
 }
-
-const env = process.env.NODE_ENV || 'development';
-
-export default {
-  [env]: {
-    dialect: config[env]['dialect'],
-    username: config[env]['username'],
-    password: config[env]['password'],
-    host: config[env]['host'],
-    migrationStorageTableName: 'SequelizeMeta'
-  }
-};
