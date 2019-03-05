@@ -4,8 +4,8 @@ import cors from "cors";
 
 // import products from "./api/products";
 // import orders from "./api/orders";
-
 const app = express();
+require('./routes/v1')(app);
 
 app.use(cors());
 app.use(bodyparser.json());
@@ -20,6 +20,7 @@ app.use((req,res,next)=> {
     err.status = 404;
     next(err);
 });
+
 
 //all other requests are not implemented.
 app.use((err,req, res, next) => {
