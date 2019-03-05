@@ -10,3 +10,13 @@ export function getAll(req , res) {
       res.send(err)
     })
 }
+
+export function register(req, res) {
+  models.User.create(req.body)
+    .then( user => {
+      res.send(user)
+    })
+    .catch( err => {
+      res.send(err)
+    })
+}
